@@ -1,0 +1,49 @@
+body {
+  background-color: #fff;
+  font-family: "Nunito", serif;
+}
+h1 {
+  color: brown;
+}
+
+h2 {
+  color: yellow;
+}
+
+.papa {
+  display: flex;
+  background-color: #000000bb;
+  color: #d1caca;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+}
+
+.hijo {
+  font-family: "Honk", serif;
+  text-transform: uppercase;
+}
+
+.hijo:hover {
+  background-color: #1c0707;
+  border-radius: 10%;
+  padding: 14px;
+  transition: 0.5s;
+}
+
+.main-img {
+  width: 100%;
+}
+
+.papa-de-imagen-y-subtitulo{
+    background-color: aqua;
+}
+
+.sub-title{
+    position: absolute;
+    top: 0;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 30%;
+    color: #fff;
+}
