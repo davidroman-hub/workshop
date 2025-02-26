@@ -1,0 +1,131 @@
+title {
+  font-size: 50px;
+}
+
+body {
+  /* background-color: lightblue; */
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+
+p>.hello {
+  color: red
+}
+
+
+.container {
+  background-color: yellow;
+  width: 50%;
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.children {
+  width: 30px;
+  height: 30px;
+  background-color: brown;
+  color: aliceblue;
+}
+
+.children-1 {
+  width: 50px;
+  height: 50px;
+  background-color: salmon;
+  color: aliceblue;
+}
+
+/* .flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+} */
+
+
+.menu {
+  width: 100%;
+  background-color: #000000;
+  color: #ffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+
+}
+
+
+.option {
+  /* height: 60px;  */
+  font-family: sans-serif;
+  font-size: 26px;
+  text-decoration: none;
+  color: #ffff;
+  margin-left: 2px;
+  margin-right: 2px;
+  /* margin-top: 10px; */
+  /* padding: 10px; */
+}
+
+.option:hover {
+  background-color: green;
+  transition: 0.5s;
+  font-size: 36px;
+  /* height: 50px; <== esto sirve para cubrir el total de la altura  */
+}
+
+/* .img-container{
+  width: 200vw;
+  background-color: blue;
+} */
+
+.img-styles {
+  width: 100%;
+}
+
+.main-title {
+  font-size: 48px;
+  color: aliceblue;
+  position: absolute;
+  top: 0;
+  margin-top: 30%;
+  margin-left: 10%;
+}
+
+.second-information {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.card-container {
+  padding: 2px 16px;
+  background-color: red;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
