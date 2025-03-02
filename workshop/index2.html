@@ -13,10 +13,10 @@
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="js/modernizr.js"></script>
-    <script src="js/prefixfree.js"></script>
+    <script src="js/prefixfree.js"></script> -->
   </head>
   <body>
     <!-- empezando por aqui -->
@@ -45,7 +45,9 @@
       <!-- <p>su navegador no soporta el elemento video</p> -->
       <section id="home">
         <div class="globo"></div>
-        <h2>Bienvenido al curso de <span class="html-subtitle">HTML5 & CSS3</span></h2>
+        <h2>
+          Bienvenido al curso de <span class="html-subtitle">HTML5 & CSS3</span>
+        </h2>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, error
           eius in quaerat reiciendis quis tempora tempore accusantium quas iusto
@@ -53,31 +55,42 @@
           delectus autem.
         </p>
         <a href="#subjects" id="">Conozca mas</a>
-        <div id="abajo"></div>
+        <!-- abajo es una flecha -->
+        <div id="down">
+          <img src="./svg/angle-bottom-icon.svg" alt="down" />
+        </div>
       </section>
-      <section id="subjects">
+      <section id="">
         <h3>Temas</h3>
         <article>
-          <div id="imagen1"></div>
-          <h4>Subtitulo nivel 4</h4>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-            excepturi, corrupti asperiores sunt amet aspernatur facilis.
-          </p>
-          <a href="#">Leer mas</a>
-          <div id="imagen2"></div>
-          <h4>Subtitulo nivel 4</h4>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-            excepturi, corrupti asperiores sunt amet aspernatur facilis.
-          </p>
-          <a href="#">Leer mas</a>
-          <h4>Subtitulo nivel 4</h4>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-            excepturi, corrupti asperiores sunt amet aspernatur facilis.
-          </p>
-          <a href="#">Leer mas</a>
+          <div class="subject-container">
+            <div id="img1"></div>
+            <h4>Subtitulo nivel 4</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+              excepturi, corrupti asperiores sunt amet aspernatur facilis.
+            </p>
+            <a href="#">Leer mas</a>
+          </div>
+
+          <div class="subject-container">
+            <div id="img2"></div>
+            <h4>Subtitulo nivel 4</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+              excepturi, corrupti asperiores sunt amet aspernatur facilis.
+            </p>
+            <a href="#">Leer mas</a>
+          </div>
+          <div class="subject-container">
+            <div id="img3"></div>
+            <h4>Subtitulo nivel 4</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+              excepturi, corrupti asperiores sunt amet aspernatur facilis.
+            </p>
+            <a href="#">Leer mas</a>
+          </div>
         </article>
       </section>
       <section id="gallery">

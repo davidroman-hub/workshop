@@ -105,6 +105,10 @@ empezamos con home */
 
 #home {
   background-color: #0000008b;
+  @media (max-width: 1000px) {
+    background: url("../img/2842579.jpg");
+    background-position-x: center;
+  }
 }
 
 .globo {
@@ -161,6 +165,115 @@ empezamos con home */
   z-index: 2;
 }
 
-/* #home a:hover{
-    tra
-} */
+#down {
+  height: 100px;
+  position: relative;
+  top: 60%;
+}
+
+#down img {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background-color: #3dab7e;
+  border-radius: 100%;
+}
+#home #down {
+  display: block;
+  height: 2rem;
+  opacity: 0;
+  top: 60%;
+  transition: all 0.35s;
+  z-index: 1;
+}
+
+#home a:hover + #down {
+  opacity: 0.5;
+  top: 65%;
+}
+
+/* Comencamos la parte de los temas */
+
+#subjects {
+}
+
+article {
+  display: flex;
+  justify-content: space-around;
+}
+
+article #img1 {
+  background-image: url("../img/ajolote1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8rem;
+  width: 9rem;
+  border-radius: 50%;
+  border: 0.25em solid #3dab7e;
+  margin: 0 auto 1.5em;
+  background-position-x: center;
+  /* //arriba 0 a los lados auto y abajo 1.5 */
+}
+
+article #img2 {
+  background-image: url("../img/ajolote2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8rem;
+  width: 9rem;
+  border-radius: 50%;
+  border: 0.25em solid #3dab7e;
+  margin: 0 auto 1.5em;
+  background-position-x: center;
+}
+
+article #img3 {
+  background-image: url("../img/ajolote3.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8rem;
+  width: 9rem;
+  border-radius: 50%;
+  border: 0.25em solid #3dab7e;
+  margin: 0 auto 1.5em;
+  background-position-x: center;
+}
+
+h3 {
+  color: #0000008b;
+  font-size: 2rem;
+  margin: 0.5em 0;
+  text-transform: uppercase;
+}
+
+
+h4 {
+  color: #3dab7e;
+  font-size: 1.5rem;
+  margin: 0.5em 0;
+  text-transform: uppercase;
+
+}
+
+article a{
+  display: block;
+  background: linear-gradient(#3dab9f, #3dab7e);
+  border-radius: 0.25em;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color:#fff;
+  text-decoration: none;
+  margin: 1.25em auto 2em;
+  width: 70%;
+  padding: 0.75em 0;
+}
+
+.subject-container a:hover{
+  background: linear-gradient(#3dab9f, #28694e);
+  transition: 0.5s;
+}
+
+
+.subject-container{
+  margin-right: 10px;
+}
