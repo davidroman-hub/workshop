@@ -1,49 +1,108 @@
-body {
-  background-color: #fff;
+* {
   font-family: "Nunito", serif;
 }
-h1 {
-  color: brown;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
-h2 {
-  color: yellow;
+main {
+  height: 100%;
 }
 
-.papa {
+section {
+  height: 100%;
+  padding: 10px 5px;
+  position: relative;
+  width: 100%;
+  /* background-color: aquamarine; */
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.932);
+  position: fixed;
   display: flex;
-  background-color: #000000bb;
-  color: #d1caca;
-  justify-content: space-around;
-  height: 50px;
+  justify-content: space-between;
   align-items: center;
+  padding: 5px 2.5px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
 }
 
-.hijo {
-  font-family: "Honk", serif;
-  text-transform: uppercase;
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.hijo:hover {
-  background-color: #1c0707;
-  border-radius: 10%;
-  padding: 14px;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul li {
+  border-right: 1px solid #ffff;
+  padding: 10px 5px;
+}
+
+.option {
+  color: #ffff;
   transition: 0.5s;
 }
 
-.main-img {
+video {
+  height: 100%;
   width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
 }
 
-.papa-de-imagen-y-subtitulo{
-    background-color: aqua;
+#home {
+  background-color: #0000008b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media (max-width:1000px) {
+    background: url("../../../workshop/img/2842579.jpg");
+    background-position: center;
+  }
 }
 
-.sub-title{
-    position: absolute;
-    top: 0;
-    margin-left: 50%;
-    margin-right: 50%;
-    margin-top: 30%;
-    color: #fff;
+#home h2 {
+  color: #fff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font: 2.5rem;
+  text-transform: uppercase;
+}
+
+#home p {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+#home a {
+  background: linear-gradient(#3dab9f, #3dab7e);
+  border-radius: 0.25rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  z-index: 2;
+}
+.html-subtitle {
+  color: #3dab7e;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }

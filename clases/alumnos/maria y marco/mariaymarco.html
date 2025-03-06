@@ -1,48 +1,82 @@
-<html lang="en">
+<html lang="es" class="no-js">
   <head>
-    <title class="title">mi proyecto David</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso html</title>
+    <!-- link:css*2+link:favicon+script:src*2 -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Honk&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/prefixfree.js"></script> -->
   </head>
+
   <body>
-    <!-- <h1>Hello David 1</h1>
-    <h1>Hello David 2</h1>
-    <h1 class="rebelde">Hello David 3</h1>
-    <h1>Hello David 4</h1>
-    <h2>Hello David</h2>
-    <h3>Hello David</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-      dignissimos laboriosam iure obcaecati nihil repudiandae harum, rem alias
-      dolores deleniti nisi voluptates fugit vel! Eum, officia. Error adipisci
-      officiis deserunt?
-    </p> -->
+    <header>
+      <a href="#home">
+        <div id="logo"></div>
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a class="option" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="option" href="#subjects">Temas </a>
+          </li>
+          <li>
+            <a class="option" href="#gallery">Galeria </a>
+          </li>
+          <li>
+            <a class="option last-option" href="#contact">Contacto </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="papa">
-      <div class="hijo">home</div>
-      <div class="hijo">Contact</div>
-      <div class="hijo">About us</div>
-    </div>
+    <main>
+      <video autoplay muted loop>
+        <source src="../../../workshop/video/vdio2.mp4" type="video/mp4" />
+      </video>
+      <section id="home">
+        <div class="ballon"></div>
+        <h2>
+          Bienvenido al curso de <span class="html-subtitle">HTML5 y CSS3</span>
+        </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a href="#subjects">Conozca mas</a>
+        <div id="down"></div>
+      </section>
 
-    <div class="papa-de-imagen-y-subtitulo">
-      <img
-        class="main-img"
-        src="https://wallpapers.com/images/high/80s-rock-1920-x-1080-5bqrgi9bhc5xgkqx.webp"
-        alt="rock"
-      />
-      <div class="sub-title">Leyendas del rock</div>
-      <div>hola again</div>
-    </div>
-
-    <!-- <div class="mama">
-        <div class="hijo">home</div>
-        <div class="hijo">Contact</div>
-        <div class="hijo">About us</div>
-      </div> -->
+      <section id="subjects">
+        <h3>Temas</h3>
+        <article>
+          <div id="img1"></div>
+          <h4>Subtitulo nivel 4</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <a href="#"></a>
+        </article>
+        <article>
+          <div id="img2"></div>
+          <h4>Subtitulo nivel 4</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <a href="#"></a>
+        </article>
+        <article>
+          <div id="img3"></div>
+          <h4>Subtitulo nivel 4</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <a href="#"></a>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
