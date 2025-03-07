@@ -1,0 +1,66 @@
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso html</title>
+    <!-- link:css*2+link:favicon+script:src*2 -->
+     
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./svg/cactus.svg" type="image/x-icon" />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/prefixfree.js"></script> -->
+  </head>
+  <body>
+    <!-- empezando por aqui -->
+    <!-- header*main#contenido>footer -->
+    <header>
+      <!-- segunda parte es crear estos div para el menu -->
+      <!-- a>div#logo^nav>ul>li*4>a -->
+      <a href="#home">
+        <div id="logo"></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a class="option" href="#home">Home</a></li>
+          <li><a class="option" href="#subjects">Tema</a></li>
+          <li><a class="option" href="#gallery">Galeria</a></li>
+          <li><a class="option last-option" href="#contact">Contactanos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="contenido">
+      <!-- agregar video -->
+      <!-- video>source[src=video/ type=video/]*1 -->
+      <video autoplay muted loop>
+        <source src="../../../workshop/video/vdio2.mp4" type="video/mp4" />
+      </video>
+      <!-- <p>su navegador no soporta el elemento video</p> -->
+      <section id="home">
+        <div class="globo"></div>
+        <h2>
+          Bienvenido al curso de <span class="html-subtitle">HTML5 & CSS3</span>
+        </h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, error
+          eius in quaerat reiciendis quis tempora tempore accusantium quas iusto
+          saepe illum, eveniet ullam voluptates consequatur doloribus rerum
+          delectus autem.
+        </p>
+        <a href="#subjects" id="">Conozca mas</a>
+        <!-- abajo es una flecha -->
+        <div id="down">
+          <img src="./svg/angle-bottom-icon.svg" alt="down" />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
