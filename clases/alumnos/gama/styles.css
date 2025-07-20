@@ -136,3 +136,101 @@ video {
 #home .papa-btn:hover + #down {
   opacity: 0.5;
 }
+
+article {
+  display: flex;
+  justify-content: space-around;
+}
+
+article #img1 {
+  background-image: url("../../../workshop/img/ajolote1.jpg");
+  height: 8rem;
+  width: 9rem;
+  background-size: cover;
+  border-radius: 50%;
+  border: 0.25em solid #3dab7e;
+  background-position-x: center;
+  margin: 0 auto 1.5em;
+}
+
+/* /// gallery */
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery {
+  --s: 150px; /* control the size */
+  --g: 10px; /* control the gap */
+  --f: 1.5; /* control the scale factor */
+
+  display: grid;
+  gap: var(--g);
+  width: calc(3 * var(--s) + 2 * var(--g));
+  aspect-ratio: 1;
+  grid-template-columns: repeat(3, auto);
+}
+
+.gallery > img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: 0.35s linear;
+}
+
+.gallery img:hover {
+  filter: grayscale(0);
+  width: calc(var(--s) * var(--f));
+  height: calc(var(--s) * var(--f));
+}
+
+.numbers-container {
+  height: 400px;
+  width: 300px;
+  background-color: #3dab7e;
+  position: absolute;
+  left: 41%;
+}
+
+#numerosMayorAsiete {
+  font-size: 40px;
+}
+#numerosMenorACinco {
+  font-size: 55px;
+}
+
+.animals-container {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #3dab7e;
+  justify-content: center;
+}
+#animals-title {
+  color: brown;
+  display: flex;
+  flex-direction: column;
+}
+
+#animals-selected {
+  color: white;
+}
+#button-gato {
+  background-color: bisque;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#animals-selected-img {
+  display: flex;
+  flex-wrap: wrap;
+}
+#animals-selected-img img{
+  width: 300px;
+  height: 300px;
+}

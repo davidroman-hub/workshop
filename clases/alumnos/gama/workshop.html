@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="js/modernizr.js"></script>
@@ -40,9 +41,9 @@
     <main id="contenido">
       <!-- agregar video -->
       <!-- video>source[src=video/ type=video/]*1 -->
-      <!-- <video autoplay muted loop>
+      <video autoplay muted loop>
         <source src="../../../workshop/video/vdio2.mp4" type="video/mp4" />
-      </video> -->
+      </video>
       <!-- <p>su navegador no soporta el elemento video</p> -->
       <section id="home">
         <div class="globo"></div>
@@ -62,6 +63,210 @@
           <img src="../../../workshop/svg/angle-bottom-icon.svg" alt="arrow" />
         </div>
       </section>
+
+      <section id="subjects">
+        <h3>Temas</h3>
+
+        <article>
+          <div class="subject-container">
+            <div id="img1"></div>
+            <h4>Subtitulo nivel 4</h4>
+            <p>Lorem ipsum dolor sit, amet con</p>
+            <a href="#">Leer mas!</a>
+          </div>
+          <div class="subject-container">
+            <div id="img1"></div>
+            <h4>Subtitulo nivel 4</h4>
+            <p>Lorem ipsum dolor sit, amet con</p>
+            <a href="#">Leer mas!</a>
+          </div>
+          <div class="subject-container">
+            <div id="img1"></div>
+            <h4>Subtitulo nivel 4</h4>
+            <p>Lorem ipsum dolor sit, amet con</p>
+            <a href="#">Leer mas!</a>
+          </div>
+        </article>
+      </section>
+
+      <div class="gallery-container">
+        <div class="gallery">
+          <img
+            src="https://picsum.photos/id/1028/300/300"
+            alt="a forest after an apocalypse"
+          />
+          <img
+            src="https://picsum.photos/id/15/300/300"
+            alt="a waterfall and many rocks"
+          />
+          <img
+            src="https://picsum.photos/id/1040/300/300"
+            alt="a house on a mountain"
+          />
+          <img
+            src="https://picsum.photos/id/106/300/300"
+            alt="sime pink flowers"
+          />
+          <img
+            src="https://picsum.photos/id/136/300/300"
+            alt="big rocks with some trees"
+          />
+          <img
+            src="https://picsum.photos/id/1039/300/300"
+            alt="a waterfall, a lot of tree and a great view from the sky"
+          />
+          <img
+            src="https://picsum.photos/id/110/300/300"
+            alt="a cool landscape"
+          />
+          <img
+            src="https://picsum.photos/id/1047/300/300"
+            alt="inside a town between two big buildings"
+          />
+          <img
+            src="https://picsum.photos/id/1057/300/300"
+            alt="a great view of the sea above the mountain"
+          />
+        </div>
+      </div>
     </main>
+
+    <div class="animals-container">
+      <div id="animals-title">
+        Animales seleccionados :
+        <div id="animal-renders">
+          <div id="animals-selected"></div>
+          <div id="animals-selected-img"></div>
+          <button id="button-gato">Si clickeas aqui solo aparece gato</button>
+        </div>
+      </div>
+    </div>
   </body>
+  <script>
+    // const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20];
+    // // const names = ["gama", "david" ,etc....];
+
+    // const numerosMayorAsiete = number.filter((numero) => numero > 7);
+    // const numerosMenorACinco = number.filter((numero) => numero < 5);
+
+    // document.getElementById("numerosMayorAsiete").innerHTML =
+    //   numerosMayorAsiete;
+
+    // document.getElementById("numerosMenorACinco").innerHTML =
+    //   numerosMenorACinco;
+
+    // const button = document.getElementById("counterButton");
+    // const button2 = document.getElementById("counterButton2");
+
+    // const counterElement = document.getElementById("counterValue");
+
+    // let counter = 0;
+
+    // button.addEventListener("click", () => {
+    //   counter++;
+    //   counterElement.innerHTML = "Counter:" + numerosMayorAsiete;
+    // });
+
+    // button2.addEventListener("click", () => {
+    //   counter++;
+    //   counterElement.innerHTML = "Counter:" + numerosMenorACinco;
+    // });
+
+    // const user = [{ name: "david", age: 33, livingIn: "paris" }];
+    // const user2 = [{ name: "gama", age: 36, livingIn: "Mx" }];
+    const container = document.getElementById("animals-selected-img");
+    const animals = [
+      {
+        name: "oso",
+        id: 1,
+        color: "negro",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjcIL3Bcxak5UscWPVA8OHvYf8RuiWoZrDw&s",
+      },
+      {
+        name: "perro",
+        id: 2,
+        color: "cafe",
+        img: "https://s3.abcstatics.com/media/familia/2019/07/22/golden-khtC--1248x698@abc.jpg",
+      },
+      {
+        name: "gato",
+        id: 3,
+        color: "blanco",
+
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8t5Qv9hoArKjwgA25zZgoNoKuhbVU2zc6-A&s",
+      },
+    ];
+
+    let animalsFilter = animals;
+    let isGato = false;
+
+    document.getElementById("animals-selected").innerHTML = animalsFilter.map(
+      (animals) => animals.name
+    );
+
+    const buttonGato = document.getElementById("button-gato");
+
+    console.log(isGato);
+    buttonGato.addEventListener("click", () => {
+      if (!isGato) {
+     
+        isGato = true;
+
+        console.log(isGato);
+        animalsFilter = animals
+          .filter((v) => v.name == "gato")
+          .map((x) => x.name);
+
+        const animalsImg = animals
+          .filter((v) => v.name == "gato")
+          .map((x) => x.img);
+
+        document.getElementById("animals-selected").innerHTML =
+          "animal selected:" + animalsFilter;
+
+        document.getElementById("button-gato").innerHTML =
+          "Ahora es:" + animalsFilter;
+
+        container.innerHTML = animalsImg.map((v) => `<img src=${v}>`);
+      } else {
+        isGato = false;
+        animalsFilter = animals.map((v) => v.name);
+        const animalsImg = animals.map((v) => v.img);
+
+        document.getElementById("animals-selected").innerHTML =
+          "animal selected:" + animalsFilter;
+
+        document.getElementById("button-gato").innerHTML =
+          "Ahora es:" + animalsFilter;
+
+          container.innerHTML = animalsImg.map((v) => `<img src=${v}>`);
+      }
+    });
+  </script>
+  <script></script>
 </html>
+<!-- 
+  const name = ["Gama", "David", "Rosalba", "Claudia", "Fernando", "Rafael", "Daniela", "Jessica"];
+const NombresConLetraG =name.filter ((name)= name Gama)
+const NombresConLetraR =name.filter((name)= name Rosalba)
+
+document.getElementById("NombresConLetraG").innerHTML=NombresConLetraG;
+
+document.getElementById("NombresConLetraR").innerHTML=NombresConLetraR
+
+const button = document.getElementById("SelectorButton1")
+const button = document.getElementById("SelectorButton2")
+
+const GeneradorDeNombres =document.getElementById("selectAperson")
+
+ //let counter = 0;
+
+button.addEventListener("click",() ={
+  counter++;
+  GeneradorDeNombres.innerHTML="Generador" + NombresConLetraG;
+});
+
+button2.addEventListener("click"()={
+  counter++;
+  GeneradorDeNombres.innerHTML="Generador" + NombresConLetraR;
+}); -->

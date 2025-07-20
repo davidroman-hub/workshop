@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase de HTML - Etiquetas Semánticas y Listas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for interactive elements */
+        .code-block {
+            font-family: 'Courier New', monospace;
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        
+        .example-container {
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .example-container:hover {
+            background-color: #f8fafc;
+            transform: translateX(4px);
+        }
+        
+        /* Animation for the demo sections */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header section -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold">Clase de HTML</h1>
+            <p class="mt-2 opacity-90">Etiquetas semánticas y listas</p>
+            
+            <!-- Navigation -->
+            <nav class="mt-6">
+                <ul class="flex flex-wrap gap-4">
+                    <li><a href="#semantic" class="hover:underline px-3 py-2 bg-blue-700 rounded-lg">Etiquetas Semánticas</a></li>
+                    <li><a href="#lists" class="hover:underline px-3 py-2 bg-blue-500 rounded-lg">Listas</a></li>
+                    <li><a href="#examples" class="hover:underline px-3 py-2 bg-blue-500 rounded-lg">Ejemplos</a></li>
+                    <li><a href="#practice" class="hover:underline px-3 py-2 bg-blue-500 rounded-lg">Práctica</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Introduction section -->
+        <section class="mb-12 bg-white p-6 rounded-xl shadow-md animate-fade-in">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">Introducción a HTML Semántico</h2>
+            <p class="text-gray-700 mb-4">HTML semántico significa usar elementos HTML que describen su significado de manera clara para el navegador y el desarrollador. Esto mejora la accesibilidad y el SEO.</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="font-medium text-blue-700 mb-2">Beneficios:</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                        <li>Mejor accesibilidad</li>
+                        <li>SEO mejorado</li>
+                        <li>Código más legible</li>
+                        <li>Estructura más clara</li>
+                    </ul>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="font-medium text-green-700 mb-2">Sin semántica:</h3>
+                    <div class="code-block text-sm">
+                        &lt;div id="header"&gt;...&lt;/div&gt;<br>
+                        &lt;div class="nav"&gt;...&lt;/div&gt;<br>
+                        &lt;div class="main"&gt;...&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Semantic tags section -->
+        <section id="semantic" class="mb-12 animate-fade-in" style="animation-delay: 0.2s;">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-6 border-b pb-2">Etiquetas Semánticas</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Header example -->
+                <article class="example-container bg-white p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-3">&lt;header&gt;</h3>
+                    <p class="text-gray-600 mb-3">Representa el encabezado de una sección o documento. Contiene títulos, logos, navegación, etc.</p>
+                    <div class="code-block text-sm">
+                        &lt;header&gt;<br>
+                        &nbsp;&nbsp;&lt;h1&gt;Mi Sitio Web&lt;/h1&gt;<br>
+                        &nbsp;&nbsp;&lt;nav&gt;...&lt;/nav&gt;<br>
+                        &lt;/header&gt;
+                    </div>
+                </article>
+                
+                <!-- Nav example -->
+                <article class="example-container bg-white p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-3">&lt;nav&gt;</h3>
+                    <p class="text-gray-600 mb-3">Define una sección con enlaces de navegación. No todos los grupos de enlaces necesitan estar en un &lt;nav&gt;.</p>
+                    <div class="code-block text-sm">
+                        &lt;nav&gt;<br>
+                        &nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Contacto&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &lt;/nav&gt;
+                    </div>
+                </article>
+                
+                <!-- Section example -->
+                <article class="example-container bg-white p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-3">&lt;section&gt;</h3>
+                    <p class="text-gray-600 mb-3">Define una sección temática en un documento. Debe tener un encabezado (h1-h6).</p>
+                    <div class="code-block text-sm">
+                        &lt;section&gt;<br>
+                        &nbsp;&nbsp;&lt;h2&gt;Sobre Nosotros&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;Contenido...&lt;/p&gt;<br>
+                        &lt;/section&gt;
+                    </div>
+                </article>
+                
+                <!-- Article example -->
+                <article class="example-container bg-white p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-3">&lt;article&gt;</h3>
+                    <p class="text-gray-600 mb-3">Contenido independiente que tendría sentido por sí solo (noticias, posts, comentarios).</p>
+                    <div class="code-block text-sm">
+                        &lt;article&gt;<br>
+                        &nbsp;&nbsp;&lt;h2&gt;Título del Artículo&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;Contenido...&lt;/p&gt;<br>
+                        &lt;/article&gt;
+                    </div>
+                </article>
+                
+                <!-- Footer example -->
+                <article class="example-container bg-white p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-3">&lt;footer&gt;</h3>
+                    <p class="text-gray-600 mb-3">Pie de página para una sección o documento. Suele contener información de copyright, enlaces legales, etc.</p>
+                    <div class="code-block text-sm">
+                        &lt;footer&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;© 2023 Mi Sitio&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;address&gt;contacto@misitio.com&lt;/address&gt;<br>
+                        &lt;/footer&gt;
+                    </div>
+                </article>
+                
+                <!-- Semantic structure example -->
+                <article class="example-container bg-white p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-3">Estructura Completa</h3>
+                    <p class="text-gray-600 mb-3">Cómo se combinan estas etiquetas en un documento típico.</p>
+                    <div class="code-block text-sm">
+                        &lt;body&gt;<br>
+                        &nbsp;&nbsp;&lt;header&gt;...&lt;/header&gt;<br>
+                        &nbsp;&nbsp;&lt;nav&gt;...&lt;/nav&gt;<br>
+                        &nbsp;&nbsp;&lt;main&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;...&lt;/section&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                        &nbsp;&nbsp;&lt;/main&gt;<br>
+                        &nbsp;&nbsp;&lt;footer&gt;...&lt;/footer&gt;<br>
+                        &lt;/body&gt;
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Lists section -->
+        <section id="lists" class="mb-12 animate-fade-in" style="animation-delay: 0.4s;">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-6 border-b pb-2">Listas en HTML</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Unordered lists -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-4">&lt;ul&gt; - Listas Desordenadas</h3>
+                    <p class="text-gray-600 mb-4">Se usan cuando el orden de los elementos no es importante. Se muestran con viñetas por defecto.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Código:</h4>
+                            <div class="code-block text-sm">
+                                &lt;ul&gt;<br>
+                                &nbsp;&nbsp;&lt;li&gt;Primer elemento&lt;/li&gt;<br>
+                                &nbsp;&nbsp;&lt;li&gt;Segundo elemento&lt;/li&gt;<br>
+                                &nbsp;&nbsp;&lt;li&gt;Tercer elemento&lt;/li&gt;<br>
+                                &lt;/ul&gt;
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Resultado:</h4>
+                            <ul class="list-disc pl-5 space-y-1 bg-gray-50 p-3 rounded">
+                                <li>Primer elemento</li>
+                                <li>Segundo elemento</li>
+                                <li>Tercer elemento</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-medium text-gray-700 mb-2">Ejemplo práctico:</h4>
+                        <div class="code-block text-sm">
+                            &lt;nav&gt;<br>
+                            &nbsp;&nbsp;&lt;ul class="menu"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Servicios&lt;/a&gt;&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Contacto&lt;/a&gt;&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&lt;/ul&gt;<br>
+                            &lt;/nav&gt;
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ordered lists -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="font-medium text-lg text-blue-700 mb-4">&lt;ol&gt; - Listas Ordenadas</h3>
+                    <p class="text-gray-600 mb-4">Se usan cuando el orden de los elementos es importante. Se muestran con números por defecto.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Código:</h4>
+                            <div class="code-block text-sm">
+                                &lt;ol&gt;<br>
+                                &nbsp;&nbsp;&lt;li&gt;Calentar agua&lt;/li&gt;<br>
+                                &nbsp;&nbsp;&lt;li&gt;Agregar café&lt;/li&gt;<br>
+                                &nbsp;&nbsp;&lt;li&gt;Colar y servir&lt;/li&gt;<br>
+                                &lt;/ol&gt;
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Resultado:</h4>
+                            <ol class="list-decimal pl-5 space-y-1 bg-gray-50 p-3 rounded">
+                                <li>Calentar agua</li>
+                                <li>Agregar café</li>
+                                <li>Colar y servir</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-medium text-gray-700 mb-2">Atributos útiles:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-sm">
+                            <li><strong>start="n"</strong>: Comienza la numeración desde n</li>
+                            <li><strong>reversed</strong>: Orden inverso (5, 4, 3...)</li>
+                            <li><strong>type="A/a/I/i/1"</strong>: Tipo de numeración</li>
+                        </ul>
+                        
+                        <div class="code-block text-sm mt-3">
+                            &lt;ol type="I" start="3"&gt;<br>
+                            &nbsp;&nbsp;&lt;li&gt;Tercer lugar&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&lt;li&gt;Cuarto lugar&lt;/li&gt;<br>
+                            &lt;/ol&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Combined examples -->
+        <section id="examples" class="mb-12 animate-fade-in" style="animation-delay: 0.6s;">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-6 border-b pb-2">Ejemplos Combinados</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Blog post example -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="font-medium text-lg text-blue-700 mb-4">Estructura de Blog</h3>
+                    
+                    <div class="code-block text-sm">
+                        &lt;article class="post"&gt;<br>
+                        &nbsp;&nbsp;&lt;header&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Título del Post&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="meta"&gt;Publicado el &lt;time&gt;2023-05-15&lt;/time&gt; por Autor&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;/header&gt;<br>
+                        &nbsp;&nbsp;&lt;section class="content"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Contenido principal del artículo...&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Punto importante 1&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Punto importante 2&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&lt;/section&gt;<br>
+                        &nbsp;&nbsp;&lt;footer class="post-footer"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="tags"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;#html&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;#web&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br>
+                        &nbsp;&nbsp;&lt;/footer&gt;<br>
+                        &lt;/article&gt;
+                    </div>
+                </div>
+                
+                <!-- Recipe example -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="font-medium text-lg text-blue-700 mb-4">Receta de Cocina</h3>
+                    
+                    <div class="code-block text-sm">
+                        &lt;article class="recipe"&gt;<br>
+                        &nbsp;&nbsp;&lt;header&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Tarta de Manzana&lt;/h1&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Tiempo: 60 minutos&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;/header&gt;<br>
+                        &nbsp;&nbsp;&lt;section class="ingredients"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Ingredientes&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;3 manzanas&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;200g de harina&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;100g de azúcar&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&lt;/section&gt;<br>
+                        &nbsp;&nbsp;&lt;section class="steps"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Preparación&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ol&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pelar y cortar las manzanas&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Mezclar harina y azúcar&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hornear a 180° por 30 min&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;<br>
+                        &nbsp;&nbsp;&lt;/section&gt;<br>
+                        &nbsp;&nbsp;&lt;footer&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Receta de la abuela&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;/footer&gt;<br>
+                        &lt;/article&gt;
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Practice section -->
+        <section id="practice" class="animate-fade-in" style="animation-delay: 0.8s;">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-6 border-b pb-2">Ejercicios Prácticos</h2>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h3 class="font-medium text-lg text-blue-700 mb-4">Ejercicio 1: Estructura Semántica</h3>
+                <p class="text-gray-600 mb-4">Crea la estructura HTML semántica para una página de noticias con:</p>
+                <ul class="list-disc pl-5 space-y-1 mb-4">
+                    <li>Un encabezado con título y subtítulo</li>
+                    <li>Menú de navegación con 3 secciones</li>
+                    <li>Área principal con 2 artículos de noticias</li>
+                    <li>Cada artículo debe tener título, fecha y contenido</li>
+                    <li>Un pie de página con información de copyright</li>
+                </ul>
+                <button onclick="showSolution('solution1')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Solución</button>
+                
+                <div id="solution1" class="hidden mt-4">
+                    <div class="code-block text-sm">
+                        &lt;body&gt;<br>
+                        &nbsp;&nbsp;&lt;header&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;El Periódico Digital&lt;/h1&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Las noticias más recientes&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;/header&gt;<br>
+                        &nbsp;&nbsp;&lt;nav&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Política&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Deportes&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Cultura&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&lt;/nav&gt;<br>
+                        &nbsp;&nbsp;&lt;main&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Nueva ley de educación&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;time&gt;2023-05-10&lt;/time&gt;&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Contenido de la noticia...&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;El equipo local gana el campeonato&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;time&gt;2023-05-09&lt;/time&gt;&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Contenido deportivo...&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                        &nbsp;&nbsp;&lt;/main&gt;<br>
+                        &nbsp;&nbsp;&lt;footer&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;© 2023 El Periódico Digital - Todos los derechos reservados&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;/footer&gt;<br>
+                        &lt;/body&gt;
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="font-medium text-lg text-blue-700 mb-4">Ejercicio 2: Listas Anidadas</h3>
+                <p class="text-gray-600 mb-4">Crea una lista de contenido para un curso de programación web con:</p>
+                <ul class="list-disc pl-5 space-y-1 mb-4">
+                    <li>3 módulos principales (HTML, CSS, JavaScript)</li>
+                    <li>Cada módulo debe tener al menos 3 temas</li>
+                    <li>El módulo de HTML debe incluir subtemas para "Etiquetas semánticas"</li>
+                    <li>Usa listas ordenadas y desordenadas según corresponda</li>
+                </ul>
+                <button onclick="showSolution('solution2')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Solución</button>
+                
+                <div id="solution2" class="hidden mt-4">
+                    <div class="code-block text-sm">
+                        &lt;h2&gt;Contenido del Curso&lt;/h2&gt;<br>
+                        &lt;ol&gt;<br>
+                        &nbsp;&nbsp;&lt;li&gt;HTML<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Estructura básica<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Doctype&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Head y Body&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Etiquetas semánticas<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;header&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;footer&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;section&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Formularios&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&lt;li&gt;CSS<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Selectores&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Box Model&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Flexbox&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&lt;li&gt;JavaScript<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Variables&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Funciones&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;DOM&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&lt;/li&gt;<br>
+                        &lt;/ol&gt;
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Acerca de esta clase</h3>
+                    <p class="text-gray-400">Material educativo sobre HTML semántico y listas. Diseñado para estudiantes principiantes.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Recursos útiles</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" class="text-gray-400 hover:text-white transition-colors">MDN HTML</a></li>
+                        <li><a href="https://www.w3schools.com/html/" class="text-gray-400 hover:text-white transition-colors">W3Schools HTML</a></li>
+                        <li><a href="https://html.spec.whatwg.org/" class="text-gray-400 hover:text-white transition-colors">HTML Standard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Contacto</h3>
+                    <address class="text-gray-400 not-italic">
+                        Escuela de Programación Web<br>
+                        email: info@escuelaweb.com<br>
+                        tel: +123 456 789
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>© 2023 Clase de HTML. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Function to show/hide solutions
+        function showSolution(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add animation class to elements as they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, {threshold: 0.1});
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

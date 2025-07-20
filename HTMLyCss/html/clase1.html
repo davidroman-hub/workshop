@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introducción a HTML clase 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .code-block {
+        font-family: "Courier New", monospace;
+        background-color: #2d2d2d;
+        color: #f8f8f2;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .tag {
+        color: #f92672;
+      }
+
+      .attribute {
+        color: #a6e22e;
+      }
+
+      .value {
+        color: #e6db74;
+      }
+
+      .content {
+        color: #ffffff;
+      }
+
+      .interactive-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .copy-btn {
+        transition: all 0.3s ease;
+      }
+
+      .copy-btn:hover {
+        background-color: #3b82f6;
+        color: white;
+      }
+
+      #practice-section {
+        transition: all 0.5s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <header class="bg-blue-600 text-white py-6 shadow-md">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-center">
+          Conceptos Básicos de HTML
+        </h1>
+        <p class="text-center mt-2 text-blue-100">
+          Aprende los fundamentos del lenguaje de marcado web
+        </p>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+      <section class="mb-12">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+          <h2
+            class="text-2xl font-semibold text-gray-800 mb-4 flex items-center"
+          >
+            <i class="fas fa-question-circle text-blue-500 mr-3"></i> ¿Qué es
+            HTML?
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <p class="text-gray-700 mb-4">
+                HTML (HyperText Markup Language) es el lenguaje estándar para
+                crear páginas web. Describe la estructura de una página web
+                mediante
+                <span class="font-semibold text-blue-600">etiquetas</span> que
+                definen el contenido como encabezados, párrafos, imágenes, etc.
+              </p>
+              <p class="text-gray-700 mb-4">
+                No es un lenguaje de programación, sino un lenguaje de marcado
+                que le dice al navegador cómo mostrar el contenido.
+              </p>
+              <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                <p class="text-blue-700 font-medium">
+                  <i class="fas fa-lightbulb text-blue-500 mr-2"></i> HTML es
+                  como el esqueleto de una página web, mientras que CSS es la
+                  piel y JavaScript los músculos.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <div
+                class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg w-full max-w-md"
+              >
+                <h3 class="text-xl font-bold mb-3">Características clave:</h3>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle mt-1 mr-2"></i>
+                    <span>Define la estructura del contenido</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle mt-1 mr-2"></i>
+                    <span>Usa etiquetas para marcar elementos</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle mt-1 mr-2"></i>
+                    <span>Se combina con CSS y JavaScript</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle mt-1 mr-2"></i>
+                    <span>Es interpretado por navegadores web</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2
+            class="text-2xl font-semibold text-gray-800 mb-6 flex items-center"
+          >
+            <i class="fas fa-code text-blue-500 mr-3"></i> Estructura de un
+            documento HTML
+          </h2>
+
+          <div class="mb-8">
+            <h3 class="text-xl font-medium text-gray-700 mb-4">
+              Estructura básica:
+            </h3>
+            <div class="code-block relative">
+              <pre><code><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"es"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;head&gt;</span>
+        <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;title&gt;</span><span class="content">Mi Página</span><span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;/head&gt;</span>
+    <span class="tag">&lt;body&gt;</span>
+        <span class="tag">&lt;h1&gt;</span><span class="content">Título Principal</span><span class="tag">&lt;/h1&gt;</span>
+        <span class="tag">&lt;p&gt;</span><span class="content">Este es un párrafo de ejemplo.</span><span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+              <button
+                class="copy-btn absolute top-2 right-2 bg-gray-200 px-3 py-1 rounded text-sm"
+              >
+                <i class="fas fa-copy mr-1"></i> Copiar
+              </button>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm interactive-card transition-all"
+            >
+              <div
+                class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto"
+              >
+                <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+              </div>
+              <h4 class="font-semibold text-center mb-2">DOCTYPE</h4>
+              <p class="text-gray-600 text-sm text-center">
+                Declara el tipo de documento y versión de HTML (HTML5 en este
+                caso).
+              </p>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm interactive-card transition-all"
+            >
+              <div
+                class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto"
+              >
+                <i class="fas fa-heading text-green-600 text-xl"></i>
+              </div>
+              <h4 class="font-semibold text-center mb-2">
+                Elemento &lt;html&gt;
+              </h4>
+              <p class="text-gray-600 text-sm text-center">
+                El contenedor raíz que engloba toda la página. El atributo
+                "lang" define el idioma.
+              </p>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm interactive-card transition-all"
+            >
+              <div
+                class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto"
+              >
+                <i class="fas fa-brain text-purple-600 text-xl"></i>
+              </div>
+              <h4 class="font-semibold text-center mb-2">
+                Sección &lt;head&gt;
+              </h4>
+              <p class="text-gray-600 text-sm text-center">
+                Contiene metadatos, enlaces a CSS/JS, título de la página y otra
+                información no visible.
+              </p>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm interactive-card transition-all"
+            >
+              <div
+                class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto"
+              >
+                <i class="fas fa-people-arrows text-yellow-600 text-xl"></i>
+              </div>
+              <h4 class="font-semibold text-center mb-2">
+                Elementos &lt;meta&gt;
+              </h4>
+              <p class="text-gray-600 text-sm text-center">
+                Proporcionan metadatos como el conjunto de caracteres y la
+                configuración de la vista.
+              </p>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm interactive-card transition-all"
+            >
+              <div
+                class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto"
+              >
+                <i class="fas fa-tag text-red-600 text-xl"></i>
+              </div>
+              <h4 class="font-semibold text-center mb-2">
+                Elemento &lt;title&gt;
+              </h4>
+              <p class="text-gray-600 text-sm text-center">
+                Define el título de la página que aparece en la pestaña del
+                navegador.
+              </p>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm interactive-card transition-all"
+            >
+              <div
+                class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto"
+              >
+                <i class="fas fa-body text-indigo-600 text-xl"></i>
+              </div>
+              <h4 class="font-semibold text-center mb-2">
+                Sección &lt;body&gt;
+              </h4>
+              <p class="text-gray-600 text-sm text-center">
+                Contiene todo el contenido visible de la página web (texto,
+                imágenes, etc.).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2
+            class="text-2xl font-semibold text-gray-800 mb-6 flex items-center"
+          >
+            <i class="fas fa-tags text-blue-500 mr-3"></i> Etiquetas Básicas
+          </h2>
+
+          <div class="overflow-x-auto">
+            <table
+              class="min-w-full bg-white border border-gray-200 rounded-lg"
+            >
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Etiqueta
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Descripción
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Ejemplo
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-mono"
+                      >&lt;html&gt;</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">
+                    Elemento raíz que contiene todo el documento HTML.
+                  </td>
+                  <td class="px-6 py-4 text-gray-700 font-mono">
+                    &lt;html&gt;...&lt;/html&gt;
+                  </td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="bg-green-100 text-green-800 px-2 py-1 rounded font-mono"
+                      >&lt;head&gt;</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">
+                    Contiene metadatos e información sobre el documento.
+                  </td>
+                  <td class="px-6 py-4 text-gray-700 font-mono">
+                    &lt;head&gt;...&lt;/head&gt;
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded font-mono"
+                      >&lt;body&gt;</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">
+                    Contiene el contenido visible de la página web.
+                  </td>
+                  <td class="px-6 py-4 text-gray-700 font-mono">
+                    &lt;body&gt;...&lt;/body&gt;
+                  </td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="bg-red-100 text-red-800 px-2 py-1 rounded font-mono"
+                      >&lt;h1&gt;</span
+                    >
+                    a
+                    <span
+                      class="bg-red-100 text-red-800 px-2 py-1 rounded font-mono"
+                      >&lt;h6&gt;</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">
+                    Encabezados de diferentes niveles (h1 es el más importante).
+                  </td>
+                  <td class="px-6 py-4 text-gray-700 font-mono">
+                    &lt;h1&gt;Título&lt;/h1&gt;<br />
+                    &lt;h2&gt;Subtítulo&lt;/h2&gt;
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="bg-purple-100 text-purple-800 px-2 py-1 rounded font-mono"
+                      >&lt;p&gt;</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">
+                    Define un párrafo de texto.
+                  </td>
+                  <td class="px-6 py-4 text-gray-700 font-mono">
+                    &lt;p&gt;Este es un párrafo.&lt;/p&gt;
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-8 grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-xl font-medium text-gray-700 mb-3">
+                Jerarquía de encabezados:
+              </h3>
+              <div class="space-y-2">
+                <h1
+                  class="text-4xl font-bold text-gray-800 border-l-4 border-blue-500 pl-4"
+                >
+                  Encabezado 1
+                </h1>
+                <h2
+                  class="text-3xl font-bold text-gray-700 border-l-4 border-green-500 pl-4"
+                >
+                  Encabezado 2
+                </h2>
+                <h3
+                  class="text-2xl font-bold text-gray-600 border-l-4 border-yellow-500 pl-4"
+                >
+                  Encabezado 3
+                </h3>
+                <h4
+                  class="text-xl font-bold text-gray-600 border-l-4 border-red-500 pl-4"
+                >
+                  Encabezado 4
+                </h4>
+                <h5
+                  class="text-lg font-bold text-gray-600 border-l-4 border-purple-500 pl-4"
+                >
+                  Encabezado 5
+                </h5>
+                <h6
+                  class="text-base font-bold text-gray-600 border-l-4 border-indigo-500 pl-4"
+                >
+                  Encabezado 6
+                </h6>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-medium text-gray-700 mb-3">
+                Ejemplo de párrafos:
+              </h3>
+              <div class="space-y-4">
+                <p class="text-gray-700">
+                  Este es un párrafo normal. HTML permite estructurar el
+                  contenido en párrafos para mejorar la legibilidad.
+                </p>
+                <p class="text-gray-700">
+                  Cada párrafo se coloca dentro de las etiquetas &lt;p&gt; y
+                  &lt;/p&gt;. Los navegadores automáticamente añaden un margen
+                  después de cada párrafo.
+                </p>
+                <p
+                  class="text-gray-700 bg-blue-50 p-3 rounded border-l-4 border-blue-500"
+                >
+                  <strong>Nota:</strong> No uses etiquetas &lt;br&gt; para crear
+                  espacio entre párrafos. Usa CSS para controlar los márgenes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="practice-section" class="mb-12">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2
+            class="text-2xl font-semibold text-gray-800 mb-6 flex items-center"
+          >
+            <i class="fas fa-laptop-code text-blue-500 mr-3"></i> Práctica: Crea
+            tu primera página HTML
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-medium text-gray-700 mb-4">
+                Instrucciones:
+              </h3>
+              <ol class="list-decimal pl-5 space-y-3 text-gray-700">
+                <li>
+                  Crea un nuevo archivo con extensión
+                  <span class="bg-gray-200 px-2 py-1 rounded font-mono"
+                    >.html</span
+                  >
+                </li>
+                <li>Escribe la estructura básica de HTML5</li>
+                <li>
+                  Añade un título principal con
+                  <span class="bg-gray-200 px-2 py-1 rounded font-mono"
+                    >&lt;h1&gt;</span
+                  >
+                </li>
+                <li>
+                  Incluye al menos dos párrafos con
+                  <span class="bg-gray-200 px-2 py-1 rounded font-mono"
+                    >&lt;p&gt;</span
+                  >
+                </li>
+                <li>Guarda el archivo y ábrelo en tu navegador</li>
+              </ol>
+
+              <div
+                class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded"
+              >
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <i
+                      class="fas fa-exclamation-circle text-yellow-400 mt-1"
+                    ></i>
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-yellow-800">Consejo</h3>
+                    <div class="mt-2 text-sm text-yellow-700">
+                      <p>
+                        Puedes usar editores como VS Code, Sublime Text o
+                        incluso el Bloc de notas para crear tu archivo HTML.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-gray-700 mb-4">
+                Editor de Práctica:
+              </h3>
+              <div class="border-2 border-gray-200 rounded-lg overflow-hidden">
+                <div
+                  class="bg-gray-100 px-4 py-2 border-b border-gray-200 flex justify-between items-center"
+                >
+                  <span class="text-sm font-medium text-gray-600"
+                    >index.html</span
+                  >
+                  <button
+                    id="run-btn"
+                    class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm flex items-center"
+                  >
+                    <i class="fas fa-play mr-1"></i> Ejecutar
+                  </button>
+                </div>
+                <div class="code-block">
+                  <textarea
+                    id="html-editor"
+                    class="w-full h-64 bg-gray-900 text-gray-100 p-4 font-mono resize-none focus:outline-none"
+                    spellcheck="false"
+                  >
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi Primera Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bienvenido a mi página&lt;/h1&gt;
+    &lt;p&gt;Este es mi primer párrafo en HTML. Estoy aprendiendo a crear páginas web.&lt;/p&gt;
+    &lt;p&gt;HTML es el lenguaje básico para estructurar contenido en la web.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea
+                  >
+                </div>
+              </div>
+
+              <div id="result-container" class="mt-4 hidden">
+                <h4 class="text-lg font-medium text-gray-700 mb-2">
+                  Resultado:
+                </h4>
+                <div class="border-2 border-gray-200 rounded-lg p-4 bg-white">
+                  <iframe
+                    id="result-frame"
+                    class="w-full h-64 border border-gray-300"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-blue-50 rounded-lg p-6">
+            <h3 class="text-xl font-medium text-blue-800 mb-4">
+              Desafío adicional:
+            </h3>
+            <p class="text-blue-700 mb-4">
+              Una vez que hayas creado tu primera página, intenta:
+            </p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <li class="flex items-start">
+                <span
+                  class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0"
+                  >1</span
+                >
+                <span>Añadir más párrafos con información sobre ti</span>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0"
+                  >2</span
+                >
+                <span>Incluir un subtítulo con &lt;h2&gt;</span>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0"
+                  >3</span
+                >
+                <span
+                  >Cambiar el texto dentro de &lt;title&gt; y ver cómo afecta a
+                  la pestaña del navegador</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0"
+                  >4</span
+                >
+                <span
+                  >Experimentar con diferentes niveles de encabezados
+                  (h1-h6)</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <h3 class="text-xl font-semibold mb-2">
+            ¡Has aprendido los conceptos básicos de HTML!
+          </h3>
+          <p class="text-gray-300 mb-4">
+            Continúa practicando y explorando más etiquetas HTML.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="text-blue-400 hover:text-blue-300">
+              <i class="fab fa-html5 text-2xl"></i>
+            </a>
+            <a href="#" class="text-blue-400 hover:text-blue-300">
+              <i class="fas fa-book text-2xl"></i>
+            </a>
+            <a href="#" class="text-blue-400 hover:text-blue-300">
+              <i class="fas fa-code text-2xl"></i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mt-6 pt-6 border-t border-gray-700 text-center text-sm text-gray-400"
+        >
+          <p>© 2023 Curso de HTML Básico. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Función para copiar código
+      document.querySelectorAll(".copy-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const codeBlock = button.parentElement.querySelector("code");
+          const range = document.createRange();
+          range.selectNode(codeBlock);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+          document.execCommand("copy");
+          window.getSelection().removeAllRanges();
+
+          // Cambiar el texto del botón temporalmente
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check mr-1"></i> Copiado!';
+          button.classList.add("bg-green-100", "text-green-800");
+
+          setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove("bg-green-100", "text-green-800");
+          }, 2000);
+        });
+      });
+
+      // Función para el editor de práctica
+      document.getElementById("run-btn").addEventListener("click", () => {
+        const htmlCode = document.getElementById("html-editor").value;
+        const resultFrame = document.getElementById("result-frame");
+        const resultContainer = document.getElementById("result-container");
+
+        resultFrame.srcdoc = htmlCode;
+        resultContainer.classList.remove("hidden");
+
+        // Desplazarse suavemente al resultado
+        document.getElementById("result-container").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+
+      // Efecto de hover para las tarjetas interactivas
+      document.querySelectorAll(".interactive-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          card.classList.add("shadow-md");
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.classList.remove("shadow-md");
+        });
+      });
+    </script>
+  </body>
+</html>
